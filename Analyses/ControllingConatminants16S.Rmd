@@ -10,7 +10,7 @@ output: html_document
 
 Increasingly there is interest in studying the microbiome from environments that contain few microbes (low microbial biomass). 16S rRNA gene sequencing allows researchers to study microbes from environments in a high throughput culture independent manner, but recent research has highlighted that this technique is prone to contaminants when applied to samples originating from low microbial biomass environments.
 
-We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluate the current computational strategies to control for contaminants (preprint available [here](https://www.biorxiv.org/content/10.1101/329854v1) ). 
+We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluated the current computational strategies to control for contaminants (preprint available [here](https://www.biorxiv.org/content/10.1101/329854v1) ). 
 
 Here, we provide the compiled R Markdown document to reproduce the analysis presented in the manuscript, divided into 6 primary sections:
 
@@ -24,7 +24,7 @@ Here, we provide the compiled R Markdown document to reproduce the analysis pres
 ### Brief overview of the mock microbial dilution series data set
 
 The data set generated for this manuscript is a dilution series of a mock microbial community. 
-ZymoBIOMIC mock community standards was used, which consisted of eight bacterial species (*Pseudomonas aeruginosa*, *Escherichia coli*, *Salmonella enterica*, *Lactobacillus fermentum*, *Enterococcus faecalis*, *Staphylococcus aureus*, *Listeria monocytogenes*, *Bacillus subtilis*) and two fungal species (*Saccharomyces cerevisiae* and *Cryptococcus neoformans*). The mock microbial community was diluted with microbial free water (Qiagen) in eight rounds of a serial three-fold dilution prior to DNA extraction. 
+ZymoBIOMIC mock community standards were used, which consisted of eight bacterial species (*Pseudomonas aeruginosa*, *Escherichia coli*, *Salmonella enterica*, *Lactobacillus fermentum*, *Enterococcus faecalis*, *Staphylococcus aureus*, *Listeria monocytogenes*, *Bacillus subtilis*) and two fungal species (*Saccharomyces cerevisiae* and *Cryptococcus neoformans*). The mock microbial community was diluted with microbial free water (Qiagen) in eight rounds of a serial three-fold dilution prior to DNA extraction. 
 
 The V4 region of the 16S rRNA gene was amplified and sequenced with Illumina MiSeq. The raw sequencing data is available in the Sequence Read Archive (SRA) under accession number [SRP155048](https://www.ncbi.nlm.nih.gov/sra/SRP155048). Reads were processed using DADA2 to generate amplicon sequence variants (ASVs), which were used to generate the phyloseq object used in this analysis. 
 
@@ -384,7 +384,7 @@ sample_sums(contaminant_no_blanks)
 summary(100 - sample_sums(contaminant_no_blanks))
 ```
 
-From this plot, it is evident that the contaminants not present in the blank control make up a significant proportion of the contaminants. This is a bit surprising, and may be due to the blank control not representing all contaminants. In this experiment all blank controls were pooled into a single sample- it likely would have been better to not pool the blank controls. 
+From this plot, it is evident that the contaminants not present in the blank control make up a significant proportion of the contaminants. This is a bit surprising, but may be due to the blank control not representing all contaminants. In this experiment all blank controls were pooled into a single sample- it likely would have been better to not pool the blank controls. 
 
 We also evaluated how many times each contaminant ASV is present across the dilution series. 
 ```{r }
@@ -416,7 +416,7 @@ plot_richness(mock_ps, measure = c('Observed','Shannon', 'InvSimpson') )
 max_diff <- ((mock_alpha[9,] - mock_alpha_pure) / mock_alpha_pure) 
 
 ```
-Finally, we save the workspace image so that we can revisit the analysis if needed and so that we can easily load the processed data for the next steps of analysis.
+Finally, we save the workspace image so that we can revisit the analysis if needed and can easily load the processed data for the next steps of analysis.
 ```{r}
 # Save workspace
 save.image("mockDilutionsPrep.RData")

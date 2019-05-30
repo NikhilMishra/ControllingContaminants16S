@@ -10,7 +10,7 @@ output: html_document
 
 Increasingly there is interest in studying the microbiome from environments that contain few microbes (low microbial biomass). 16S rRNA gene sequencing allows researchers to study microbes from environments in a high throughput culture independent manner, but recent research has highlighted that this technique is prone to contaminants when applied to samples originating from low microbial biomass environments.
 
-We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluate the current computational strategies to control for contaminants (preprint available here). 
+We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluated the current computational strategies to control for contaminants (preprint available here). 
 
 Here, we provide the compiled R Markdown document to reproduce the analysis presented in the manuscript, divided into 6 primary sections:
 
@@ -316,7 +316,7 @@ We can also evaluate the success of removing contaminants by identifying how man
 
 We will use a similar scheme that was used for evaluating SourceTracker and decontam in our manuscript:
 
-* true_neg - ASVs correctly identified as mock community ASVs (correctly remaining int the data set after filtering)
+* true_neg - ASVs correctly identified as mock community ASVs (correctly remaining in the data set after filtering)
 * false_neg - ASVs incorrectly identified as mock community ASVs (unremoved contaminants)
 * true_pos - ASVs correctly identified as contaminant ASVs (correctly removing a contaminant ASV from the data set)
 * false_pos - ASVs incorrectly identified as contaminant ASVs (incorrectly removing a mock community read from the data set)

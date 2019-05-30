@@ -6,7 +6,7 @@ output: html_document
 
 ### Introduction
 
-We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluate the current computational strategies to control for contaminants (preprint available here). 
+We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluated the current computational strategies to control for contaminants (preprint available here). 
 
 We provide the compiled R Markdown documents to reproduce the analysis presented in the manuscript, divided into 6 primary sections:  
 
@@ -287,7 +287,7 @@ unk_otus <- load_sourcetracker("./Sourcetracker_mock_cp_b_30000/full_results/moc
 
 ```
 
-We will also create a new variables, **mock_orig** and **con_orig** that stores the proportion of each sample arising from the mock community and contaminants, respectively. Since the data was subsampled prior to running SourceTracker, the proportion of contaminant ASVs will vary. To identify the proportion of the original sample that arose from contaminants, we sum the proportion of non-mock community ASVs from each of the SourceTracker result files. We then sum the total amount of contaminant ASVs for each sample.  
+We will also create new variables, **mock_orig** and **con_orig** that stores the proportion of each sample arising from the mock community and contaminants, respectively. Since the data was subsampled prior to running SourceTracker, the proportion of contaminant ASVs will vary. To identify the proportion of the original sample that arose from contaminants, we sum the proportion of non-mock community ASVs from each of the SourceTracker result files. We then sum the total amount of contaminant ASVs for each sample.  
 
 ```{r}
 # determine total amounts of conatmiants across the dataset
@@ -320,7 +320,7 @@ To evaluate SourceTracker, we will generate a stacked bar plot of the SourceTrac
 
 ### Plot classifications per sample
 
-To summarize the SourceTracker classifications, we will create stacked bar plots that summarize the proportion of reads correctly and incorrectly classified as arising from the mock microbial community (mock_c for correct, mock_i for incorrect), the contaminant profile (cp_c, cp_i), the blank (blank_c, blank_i), unknown (unk_c, unk_i).   
+To summarize the SourceTracker classifications, we will create stacked bar plots that summarize the proportion of reads correctly and incorrectly classified as arising from the mock microbial community (mock_c for correct, mock_i for incorrect), the contaminant profile (cp_c, cp_i), the blank (blank_c, blank_i), and the unknown (unk_c, unk_i).   
 
 
 # Summarize Results as done for other methods

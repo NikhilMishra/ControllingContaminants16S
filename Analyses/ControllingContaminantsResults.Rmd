@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Increasingly there is interest in studying the microbiome from environments that contain few microbes (low microbial biomass). 16S rRNA gene sequencing allows researchers to study microbes from environments in a high throughput culture independent manner, but recent research has highlighted that this technique is prone to contaminants when applied to samples originating from low microbial biomass environments.
 
-We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluate the current computational strategies to control for contaminants (preprint available here). 
+We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluated the current computational strategies to control for contaminants (preprint available here). 
 
 Here, we provide the compiled R Markdown document to reproduce the analysis presented in the manuscript, divided into 6 primary sections:
 
@@ -87,7 +87,7 @@ results_expected$prevalence <- results_filter_0_1$prevalence
 
 Working with the results in individual variables is probably do-able, but likely a headache. We will save ourselves by combining all the results_* objects into one object called results_all. This was kind of done in a brute force way, if anyone has suggestions to do this more elegantly, please share! 
 
-We also have a few modifications to the results_all data frame that to make the data cleaner/easier to work with down the line. 
+We also have a few modifications to the results_all data frame to make the data cleaner/easier to work with down the line. 
 
 ```{r }
 # create massive data table with all results

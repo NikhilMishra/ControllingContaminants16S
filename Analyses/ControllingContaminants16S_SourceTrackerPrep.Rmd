@@ -6,7 +6,7 @@ output: html_document
 ---
 ### Introduction
 
-We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluate the current computational strategies to control for contaminants (preprint available here). 
+We recently performed a study to understand the impact of decreasing microbial biomass on 16S rRNA gene sequencing experiments and evaluated the current computational strategies to control for contaminants (preprint available here). 
 
 We provide the compiled R Markdown documents to reproduce the analysis presented in the manuscript, divided into 4 primary sections:
 
@@ -21,7 +21,7 @@ For more information about the experimental design and preprocessing of the data
 
 ### Using SourceTracker for contaminant identification and removal
 
-SourceTracker is a tool that uses a Bayesian approach to predict the proportion of an unknown experimental sample arising from known source environments. More information about SourceTracker can be found in the [manuscript](https://www.nature.com/articles/nmeth.1650). SourceTracker was initially implemented in R, which is the version used here. The sourcecode for running SourceTracker in R is available [here](https://github.com/danknights/sourcetracker). Recently, SourceTracker has be implemented and is currently being further developed in Python, which is available [here](https://github.com/biota/sourcetracker2).  
+SourceTracker is a tool that uses a Bayesian approach to predict the proportion of an unknown experimental sample arising from known source environments. More information about SourceTracker can be found in the [manuscript](https://www.nature.com/articles/nmeth.1650). SourceTracker was initially implemented in R, which is the version used here. The sourcecode for running SourceTracker in R is available [here](https://github.com/danknights/sourcetracker). Recently, SourceTracker was implemented and is currently being further developed in Python, which is available [here](https://github.com/biota/sourcetracker2).  
 
 We evaluated SourceTracker to identify contaminants in a 16S rRNA sequencing experiment consisting of a dilution series of a mock microbial community. SourceTracker is a bit resource intensive and can take a while to run, so the code used to run SourceTracker is presented here, but the results from running SourceTracker are available <here> for anyone not wishing to run this analysis. The analysis of the SourceTracker results are available in a separate Markdown document **Evaluating SourceTracker results**.  
 
@@ -46,7 +46,7 @@ We tested two scenarios for recovering the mock microbial community profiles fro
 **Scenario 2: a poorly defined experimental environment** In the second scenario, the expected mock microbial community is unknown, and the proportion of sequences not predicted to be from the blank control or contaminant profile is the contamination-corrected profile. The second scenario is the more commonly encountered scenario, where the low microbial biomass environment that is being studied is poorly defined. 
 
 *Case 3* - The source environments were: contaminant source and blank control source
-*Case 4* - Tested if the blank control source environment was enough to classify contaminant ASVs. The source environments was the blank control source
+*Case 4* - Tested if the blank control source environment was enough to classify contaminant ASVs. The source environments were the blank control source
 
 This R Markdown file loads in the result files from running **Introduction and evaluating contaminants**, preps the data for SourceTracker, and runs SourceTracker v1.01 (the R implementation, available here). You can skip this, download the resulting SourceTracker files here and skip ahead to the **Evaluation of SourceTracker results**. 
 
